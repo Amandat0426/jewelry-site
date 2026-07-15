@@ -1,0 +1,699 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LUXE & CO. Jewelry｜40+ 熟齡光芒珠寶</title>
+  <style>
+    :root {
+      --ink: #201a16;
+      --soft-ink: #5f5149;
+      --ivory: #f8f3ea;
+      --pearl: #fffaf2;
+      --champagne: #d9b979;
+      --gold: #a8782f;
+      --emerald: #154238;
+      --ruby: #7c2639;
+      --shadow: rgba(28, 20, 12, .22);
+      --line: rgba(168, 120, 47, .28);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--ivory);
+      font-family: "Noto Serif TC", "Microsoft JhengHei", "PingFang TC", Georgia, serif;
+      line-height: 1.75;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .site-nav {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 18px clamp(20px, 5vw, 72px);
+      color: #fff;
+      background: linear-gradient(180deg, rgba(32, 26, 22, .72), rgba(32, 26, 22, 0));
+    }
+
+    .brand {
+      display: grid;
+      gap: 0;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      font-size: 18px;
+      line-height: 1.1;
+    }
+
+    .brand span {
+      font-size: 10px;
+      letter-spacing: .42em;
+      opacity: .82;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: clamp(14px, 2.2vw, 34px);
+      align-items: center;
+      font-family: "Microsoft JhengHei", "PingFang TC", sans-serif;
+      font-size: 14px;
+      letter-spacing: .16em;
+    }
+
+    .nav-links a {
+      padding-bottom: 4px;
+      border-bottom: 1px solid transparent;
+    }
+
+    .nav-links a:hover {
+      border-color: currentColor;
+    }
+
+    .hero {
+      min-height: 94vh;
+      position: relative;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(17, 13, 11, .88) 0%, rgba(17, 13, 11, .52) 38%, rgba(17, 13, 11, .08) 78%),
+        url("file:///C:/Users/je900/Desktop/%E6%96%B0%E5%A2%9E%E8%B3%87%E6%96%99%E5%A4%BE/c6ded8d8-0ad3-4771-9a42-ed78acd921fb.png") center / cover no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 28vh;
+      background: linear-gradient(180deg, rgba(248, 243, 234, 0), var(--ivory));
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: min(760px, calc(100% - 40px));
+      margin: 0 0 clamp(72px, 12vh, 132px) clamp(20px, 7vw, 96px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin: 0 0 20px;
+      color: var(--champagne);
+      font-family: "Microsoft JhengHei", "PingFang TC", sans-serif;
+      font-size: 13px;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 54px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 680px;
+      margin-bottom: 22px;
+      font-size: clamp(44px, 7vw, 92px);
+      line-height: 1.05;
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+
+    .hero-copy {
+      max-width: 560px;
+      margin-bottom: 34px;
+      color: rgba(255, 255, 255, .88);
+      font-family: "Microsoft JhengHei", "PingFang TC", sans-serif;
+      font-size: clamp(17px, 1.6vw, 22px);
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 10px 22px;
+      border: 1px solid rgba(255, 255, 255, .55);
+      border-radius: 999px;
+      font-family: "Microsoft JhengHei", "PingFang TC", sans-serif;
+      font-size: 14px;
+      letter-spacing: .16em;
+      transition: transform .2s ease, background .2s ease, color .2s ease;
+    }
+
+    .button.primary {
+      border-color: var(--champagne);
+      background: var(--champagne);
+      color: #21170f;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: clamp(70px, 9vw, 124px) clamp(20px, 5vw, 72px);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, .8fr) minmax(260px, .55fr);
+      gap: clamp(28px, 5vw, 82px);
+      align-items: end;
+      max-width: 1220px;
+      margin: 0 auto 42px;
+    }
+
+    .section-head h2 {
+      margin-bottom: 0;
+      font-size: clamp(32px, 4vw, 56px);
+      line-height: 1.18;
+      font-weight: 500;
+    }
+
+    .section-head p {
+      margin-bottom: 4px;
+      color: var(--soft-ink);
+      font-family: "Microsoft JhengHei", "PingFang TC", sans-serif;
+      font-size: 16px;
+    }
+
+    .intro {
+      background: linear-gradient(135deg, var(--ivory), #f1e3cf 54%, #faf6ef);
+    }
+
+    .intro-grid {
+      max-width: 1220px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: .72fr 1fr;
+      gap: clamp(26px, 5vw, 72px);
+      align-items: center;
+    }
+
+    .intro-mark {
+      min-height: 330px;
+      display: grid;
+      place-items: center;
+      color: var(--emerald);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .intro-mark strong {
+      display: block;
+      max-width: 420px;
+      font-size: clamp(28px, 4vw, 54px);
+      line-height: 1.25;
+      font-weight: 500;
+    }
+
+    .intro-text {
+      color: var(--soft-ink);
+      font-family: "Microsoft JhengHei", "PingFang TC", sans-serif;
+      font-size: 18px;
+    }
+
+    .intro-text p {
+      margin-bottom: 18px;
+    }
+
+    .collections {
+      background: var(--pearl);
+    }
+
+    .collection-grid {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+
+    .story {
+      position: relative;
+      min-height: 560px;
+      grid-column: span 6;
+      overflow: hidden;
+      background: #21170f;
+      color: #fff;
+      isolation: isolate;
+    }
+
+    .story.wide {
+      grid-column: span 12;
+      min-height: 620px;
+    }
+
+    .story img {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      transition: transform .7s ease;
+    }
+
+    .story::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(180deg, rgba(16, 11, 8, .08), rgba(16, 11, 8, .82));
+    }
+
+    .story:hover img {
+      transform: scale(1.035);
+    }
+
+    .story-copy {
+      position: absolute;
+      inset: auto 0 0;
+      padding: clamp(28px, 4vw, 54px);
+    }
+
+    .story-kicker {
+      margin-bottom: 10px;
+      color: var(--champagne);
+      font-family: "Microsoft JhengHei", "PingFang TC", sans-serif;
+      font-size: 13px;
+      letter-spacing: .2em;
+    }
+
+    .story h3 {
+      margin-bottom: 12px;
+      font-size: clamp(27px, 3vw, 42px);
+      line-height: 1.25;
+      font-weight: 500;
+    }
+
+    .story p {
+      max-width: 520px;
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, .86);
+      font-family: "Microsoft JhengHei", "PingFang TC", sans-serif;
+      font-size: 16px;
+    }
+
+    .style-guide {
+      background:
+        linear-gradient(90deg, rgba(21, 66, 56, .94), rgba(21, 66, 56, .78)),
+        url("file:///C:/Users/je900/Desktop/%E6%96%B0%E5%A2%9E%E8%B3%87%E6%96%99%E5%A4%BE/hermes-ambassador-05.png") center / cover fixed no-repeat;
+      color: #fff;
+    }
+
+    .guide-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: .72fr 1fr;
+      gap: clamp(30px, 6vw, 86px);
+      align-items: start;
+    }
+
+    .guide-wrap h2 {
+      margin-bottom: 18px;
+      font-size: clamp(34px, 4vw, 58px);
+      line-height: 1.16;
+      font-weight: 500;
+    }
+
+    .guide-wrap > div > p {
+      max-width: 470px;
+      color: rgba(255, 255, 255, .8);
+      font-family: "Microsoft JhengHei", "PingFang TC", sans-serif;
+      font-size: 17px;
+    }
+
+    .guide-list {
+      display: grid;
+      gap: 0;
+      border-top: 1px solid rgba(217, 185, 121, .42);
+    }
+
+    .guide-item {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 26px;
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(217, 185, 121, .32);
+      font-family: "Microsoft JhengHei", "PingFang TC", sans-serif;
+    }
+
+    .guide-item strong {
+      color: var(--champagne);
+      font-family: "Noto Serif TC", Georgia, serif;
+      font-size: 22px;
+      font-weight: 500;
+    }
+
+    .guide-item p {
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, .84);
+    }
+
+    .editorial {
+      background: #f5eadb;
+    }
+
+    .editorial-wrap {
+      max-width: 1220px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr .86fr;
+      gap: clamp(28px, 5vw, 70px);
+      align-items: center;
+    }
+
+    .editorial-photo {
+      min-height: 620px;
+      overflow: hidden;
+      box-shadow: 0 28px 70px rgba(79, 48, 22, .2);
+    }
+
+    .editorial-copy h2 {
+      margin-bottom: 22px;
+      font-size: clamp(34px, 4.4vw, 62px);
+      line-height: 1.16;
+      font-weight: 500;
+      color: var(--ruby);
+    }
+
+    .editorial-copy p {
+      color: var(--soft-ink);
+      font-family: "Microsoft JhengHei", "PingFang TC", sans-serif;
+      font-size: 18px;
+    }
+
+    .quote {
+      margin-top: 34px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+      color: var(--emerald);
+      font-size: clamp(23px, 2.6vw, 34px);
+      line-height: 1.45;
+    }
+
+    .closing {
+      min-height: 72vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: #fff;
+      background:
+        linear-gradient(180deg, rgba(32, 26, 22, .1), rgba(32, 26, 22, .78)),
+        url("file:///C:/Users/je900/Desktop/%E6%96%B0%E5%A2%9E%E8%B3%87%E6%96%99%E5%A4%BE/73bbfc07-c167-42b7-ad73-c1a71d340fec.png") center / cover no-repeat;
+    }
+
+    .closing-inner {
+      width: min(820px, calc(100% - 40px));
+      padding-top: 18vh;
+    }
+
+    .closing h2 {
+      margin-bottom: 18px;
+      font-size: clamp(38px, 5vw, 72px);
+      line-height: 1.12;
+      font-weight: 500;
+    }
+
+    .closing p {
+      margin: 0 auto 30px;
+      max-width: 640px;
+      color: rgba(255, 255, 255, .86);
+      font-family: "Microsoft JhengHei", "PingFang TC", sans-serif;
+      font-size: 18px;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 24px clamp(20px, 5vw, 72px);
+      color: rgba(255, 250, 242, .76);
+      background: var(--ink);
+      font-family: "Microsoft JhengHei", "PingFang TC", sans-serif;
+      font-size: 13px;
+      letter-spacing: .08em;
+    }
+
+    @media (max-width: 900px) {
+      .site-nav {
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 88vh;
+        background-position: 62% center;
+      }
+
+      .hero-content {
+        margin-left: 20px;
+        margin-bottom: 68px;
+      }
+
+      .section-head,
+      .intro-grid,
+      .guide-wrap,
+      .editorial-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .intro-mark {
+        min-height: 220px;
+        justify-items: start;
+      }
+
+      .story,
+      .story.wide {
+        grid-column: span 12;
+        min-height: 520px;
+      }
+
+      .editorial-photo {
+        min-height: 520px;
+      }
+
+      .footer {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero {
+        background:
+          linear-gradient(180deg, rgba(17, 13, 11, .22), rgba(17, 13, 11, .88)),
+          url("file:///C:/Users/je900/Desktop/%E6%96%B0%E5%A2%9E%E8%B3%87%E6%96%99%E5%A4%BE/c6ded8d8-0ad3-4771-9a42-ed78acd921fb.png") 56% center / cover no-repeat;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .story,
+      .story.wide {
+        min-height: 470px;
+      }
+
+      .guide-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav" aria-label="主要導覽">
+    <a class="brand" href="#top">LUXE & CO.<span>Jewelry</span></a>
+    <div class="nav-links">
+      <a href="#story">品牌故事</a>
+      <a href="#collections">珠寶系列</a>
+      <a href="#guide">選品指南</a>
+      <a href="#visit">預約鑑賞</a>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="hero-content">
+      <p class="eyebrow">For Women 40+</p>
+      <h1>40+ 的光芒，不需要被定義。</h1>
+      <p class="hero-copy">給走過風景、也懂得選擇自己的女人。以鑽石的清澈、黃金的溫度與寶石的氣場，襯出成熟之後更從容的美。</p>
+      <div class="button-row">
+        <a class="button primary" href="#collections">探索系列</a>
+        <a class="button" href="#guide">找到我的珠寶語氣</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro" id="story">
+      <div class="intro-grid">
+        <div class="intro-mark">
+          <strong>優雅不是年齡的附註，而是時間替妳雕出的輪廓。</strong>
+        </div>
+        <div class="intro-text">
+          <p>LUXE & CO. 以高級珠寶的詩意線條與大膽色彩為靈感，為 40+ 輕熟女重新整理日常珠寶的穿戴語言。</p>
+          <p>我們相信，成熟的女人不需要追趕流行；她只需要一件剛好的珠寶，讓眼神更亮、姿態更穩，讓每一次出場都像自然發光。</p>
+          <p>從會議室、午後書房、海邊假期到晚宴場合，每一款選品都在妳的生活裡找到位置，而不是只被收藏在盒子裡。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="collections" id="collections">
+      <div class="section-head">
+        <h2>五種光影，五種成熟的漂亮。</h2>
+        <p>把珠寶分成可穿、可搭、可出席的情境，而不是只用價格或材質介紹。每一張照片，都替一種 40+ 的美說話。</p>
+      </div>
+
+      <div class="collection-grid">
+        <article class="story wide">
+          <img src="file:///C:/Users/je900/Desktop/%E6%96%B0%E5%A2%9E%E8%B3%87%E6%96%99%E5%A4%BE/c6ded8d8-0ad3-4771-9a42-ed78acd921fb.png" alt="鑽石晚宴珠寶形象照">
+          <div class="story-copy">
+            <div class="story-kicker">Diamond Evening</div>
+            <h3>晚宴鑽光系列</h3>
+            <p>重要場合不只需要禮服，更需要一束替妳說話的光。耳墜、項鍊與戒指形成細緻層次，襯托不張揚卻很難忽視的主場氣勢。</p>
+          </div>
+        </article>
+
+        <article class="story">
+          <img src="file:///C:/Users/je900/Desktop/%E6%96%B0%E5%A2%9E%E8%B3%87%E6%96%99%E5%A4%BE/mejuri-ambassador-03.png" alt="黑色西裝搭配金色珠寶形象照">
+          <div class="story-copy">
+            <div class="story-kicker">Everyday Gold</div>
+            <h3>日常金色系列</h3>
+            <p>適合會議、午餐約會與一個人的咖啡時間。細鍊、耳圈與金戒指讓黑色套裝多一點溫度，成熟但不沉重。</p>
+          </div>
+        </article>
+
+        <article class="story">
+          <img src="file:///C:/Users/je900/Desktop/%E6%96%B0%E5%A2%9E%E8%B3%87%E6%96%99%E5%A4%BE/hermes-ambassador-06.png" alt="海邊度假搭配金色耳環形象照">
+          <div class="story-copy">
+            <div class="story-kicker">Resort Glow</div>
+            <h3>度假光影系列</h3>
+            <p>白衫、海風與金色耳環，是最輕盈的奢華。讓珠寶在陽光下變成膚色的一部分，鬆弛、乾淨，也很有存在感。</p>
+          </div>
+        </article>
+
+        <article class="story">
+          <img src="file:///C:/Users/je900/Desktop/%E6%96%B0%E5%A2%9E%E8%B3%87%E6%96%99%E5%A4%BE/hermes-ambassador-05.png" alt="橘棕襯衫搭配金色珠寶與絲巾形象照">
+          <div class="story-copy">
+            <div class="story-kicker">Library Amber</div>
+            <h3>午後書房系列</h3>
+            <p>琥珀色襯衫、絲巾與金色手環，適合懂得留白的女人。它不急著吸引目光，卻讓人記得妳的品味。</p>
+          </div>
+        </article>
+
+        <article class="story">
+          <img src="file:///C:/Users/je900/Desktop/%E6%96%B0%E5%A2%9E%E8%B3%87%E6%96%99%E5%A4%BE/73bbfc07-c167-42b7-ad73-c1a71d340fec.png" alt="白色柔光鑽石珠寶形象照">
+          <div class="story-copy">
+            <div class="story-kicker">White Garden</div>
+            <h3>白光花園系列</h3>
+            <p>像花瓣一樣柔，像鑽石一樣清醒。適合紀念日、婚禮賓客與任何想把自己照顧得更好的日子。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="style-guide" id="guide">
+      <div class="guide-wrap">
+        <div>
+          <p class="eyebrow">Style Guide</p>
+          <h2>給 40+ 輕熟女的珠寶搭配法。</h2>
+          <p>不追求堆滿，而是讓每一件珠寶都替妳的氣質加分。成熟的漂亮，講究比例、光澤與剛剛好的距離。</p>
+        </div>
+
+        <div class="guide-list">
+          <div class="guide-item">
+            <strong>耳環</strong>
+            <p>臉部線條想更精神，選垂墜鑽光或圓弧金色耳圈；比小耳釘更有修飾感，也比誇張造型更耐看。</p>
+          </div>
+          <div class="guide-item">
+            <strong>項鍊</strong>
+            <p>V 領、襯衫與晚宴禮服都適合細緻層次。第一條貼近鎖骨，第二條拉出垂墜，能讓肩頸更修長。</p>
+          </div>
+          <div class="guide-item">
+            <strong>戒指</strong>
+            <p>單顆主石適合重要場合，圓潤金戒適合日常。手部是最常被看見的細節，請讓它有一點自信的重量。</p>
+          </div>
+          <div class="guide-item">
+            <strong>手環</strong>
+            <p>成熟穿搭最怕太滿，手腕留一件剛好的金色或鑽光，就能讓襯衫、針織與洋裝更有完成度。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="editorial">
+      <div class="editorial-wrap">
+        <div class="editorial-photo">
+          <img src="file:///C:/Users/je900/Desktop/%E6%96%B0%E5%A2%9E%E8%B3%87%E6%96%99%E5%A4%BE/mejuri-ambassador-03.png" alt="成熟女性黑色西裝金色珠寶形象">
+        </div>
+        <div class="editorial-copy">
+          <p class="eyebrow">Editorial Note</p>
+          <h2>不是變年輕，而是變得更像自己。</h2>
+          <p>40+ 之後，女人的美不再只靠新鮮感。它來自選擇的能力、生活的厚度，以及懂得把自己放在重要位置的溫柔。</p>
+          <p>珠寶在這裡不是炫耀，而是提醒：妳已經走到一個能為自己挑選光芒的階段。它可以很日常，也可以很隆重；重點是，妳戴上它時，感覺自己被好好對待。</p>
+          <div class="quote">「一件好的珠寶，不是讓妳看起來像別人，而是讓妳更確定自己。」</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing" id="visit">
+      <div class="closing-inner">
+        <p class="eyebrow">Private Styling</p>
+        <h2>把下一次出場，留給真正適合妳的光。</h2>
+        <p>預約一對一珠寶風格建議，依照膚色、場合、衣櫥與生活節奏，整理最適合妳的鑽石、黃金與寶石搭配。</p>
+        <a class="button primary" href="mailto:hello@luxe-co.example">預約珠寶風格顧問</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>LUXE & CO. Jewelry</div>
+    <div>Designed for women who shine with time.</div>
+  </footer>
+</body>
+</html>
